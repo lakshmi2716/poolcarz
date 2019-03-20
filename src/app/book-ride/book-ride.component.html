@@ -1,0 +1,55 @@
+<div class="container ridestyle center" style="font-size:15px" >
+    
+          <div class="card border border-info" >
+              <div class="card-header bg-info font-weight-bold ">Book a ride</div>
+              <div class="card-body" style="font-family: Comic Sans MS;color: purple;">
+                              <p>Pool Carz is an online application which enable users to share ride with others.You can
+                either ride a book or offer a ride. Did we mention that this is app is &nbsp; advertisment 
+                free? To add on top of that its free of cost !! So what you are waiting for !?Check out the 
+                rides availble and starting PCling!!! </p> 
+                  <br>
+                
+                <div class="row">
+                  <div class="col-sm-3" > 
+                    <button type="button" class="btn btn-outline-info" (click) = "allrides()">
+                      Show All Rides</button> </div> 
+                  <div class="col-sm-3" > 
+                    <button type="button"  class="btn btn-outline-info" (click) = "toinfy()">
+                      To Infosys</button> </div> 
+                  <div class="col-sm-3" >
+                     <button type="button" class="btn btn-outline-info" (click) = "frominfy()">
+                       From Infosys</button> </div>
+                  <div class="col-sm-3" > 
+                    <button type="button" class="btn btn-outline-info" (click) ="other()">Others</button> </div>  
+              </div> <br>
+                <p style="font-family: Comic Sans MS;color: purple; text-align:center" > Please select a ride!</p>
+                 
+               <div>
+                <table class="table table-sm table-bordered">
+                  <thead style="color:white">
+                    <th class="bg-info"> Start Point </th>
+                    <th class="bg-info"> End Point </th>
+                    <th class="bg-info"> Seats Availble </th>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor = "let ride of rides  | ridefilter : filters">
+                     <td >{{ride.startpoint}} </td>
+                     <td>{{ride.endpoint}}</td>
+                     <td>{{ride.seatsavail}}</td>
+                  </tr>
+                </tbody>
+                </table>
+                </div>
+                <br>
+                  <div class="row">
+                    <div class="col-md-4 offset-md-5">
+                        <button type="button" class="btn btn-info" (click) = "offerride()" >
+                                         Offer a ride
+                          </button>
+                    </div>
+                  </div>
+                   
+              </div> 
+         
+</div> 
+</div>

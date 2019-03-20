@@ -1,0 +1,36 @@
+<div class="container-fluid login-style">
+    <div class="card card-primary ">
+      <div class="card-header bg-info text-white" >Login</div>
+       <div class="card-body border border-primary">
+          <form>
+              <div class="form-group row">
+                  <label for="username" class="col-sm-3 col-form-label text-style" >User Name </label>
+                  <div class="col-sm-6">
+                      <input type="text" class="form-control"  placeholder="Enter username" 
+                      [(ngModel)]="username" name="username">
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="password" class="col-sm-3 col-form-label text-style">Password</label>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control"  placeholder="Enter Password" [(ngModel)]="password" name="password">
+                  </div>
+                </div>
+                <div class="form-group row">
+                     <div class="col-sm-10" style="padding-left:200px">
+                        <button (click)="onsubmit(username.value,password.value)" type="submit" 
+                        class="btn btn-primary ">Log in</button>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div *ngIf="submitted">
+                            <div *ngIf = "!authenticated">
+                                 <label> Invalid Login !!! Please try again...</label>
+                            </div>
+                     </div>
+                </div> 
+            
+          </form>
+      </div>
+    </div>
+</div>

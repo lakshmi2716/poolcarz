@@ -1,0 +1,19 @@
+.ridestyle{
+        margin: auto;
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        bottom: 0; 
+        right: 0;
+}
+
+.center{
+    position: relative;
+    top: 65px;
+    margin-left: 300px;
+    margin-right: 150px;
+    width: 750px;
+    height:90%;
+    margin-bottom: 20px;
+}
+

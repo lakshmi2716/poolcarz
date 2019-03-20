@@ -1,0 +1,57 @@
+
+<div class ="container">
+ <div class="card " style=" width: 600px; height: 50%; margin-top: 50px; margin-left:150px;
+          border-color:cornflowerblue;">
+      <div class="class-header bg-primary" style="font-size: x-large;  color: cornsilk; 
+         font-family: sans-serif;">Car Ride Registration Form </div>
+  <div class="card-body">
+  <form #rideform="ngForm" > 
+       <div class="form-group">
+          <label style="font-weight:bold">Name</label>
+            <input type ="text" required minlength = 5 #name = "ngModel" 
+            [class.is-invalid]="name.invalid && name.touched"
+            class="form-control" name="username" [(ngModel)] ="username">
+       </div>
+
+      <div class="form-group">
+        <label style="font-weight:bold">Start Location</label>
+        <input type ="text" required class="form-control" name="startloc" [(ngModel)] ="startloc"
+        #start = "ngModel" [class.is-invalid]="start.invalid && start.touched">
+      </div>
+    
+
+      <div class="form-group">
+        <label style="font-weight:bold">Destination</label>
+        <input type ="text" required #eloc = "ngModel" [class.is-invalid]="eloc.invalid && eloc.touched"
+        class="form-control"  name="endloc" [(ngModel)] ="destination">
+      </div>
+
+      <div class="form-group">
+        <label style="font-weight:bold">Car Name</label>
+        <input type ="text" required #carname = "ngModel" [class.is-invalid]="carname.invalid&&carname.touched"
+        class="form-control" name="carname" [(ngModel)] = "car">
+      </div>
+
+      <div class="form-group">
+        <label style="font-weight:bold">Seats Available</label>
+        <input type = "number" required class="form-control" [(ngModel)] = "seats"
+        name="carseat" #carseat = "ngModel" validateseat>
+          <div *ngIf ="carseat.dirty && carseat.errors?.validseat">
+               Number of sheets should be less than or equal to 8
+        </div>      
+        
+        </div>
+               
+     
+      
+      <button type="button"   [disabled]="rideform.invalid" class="btn btn-primary"(click)="submit()" >Submit</button> &nbsp; &nbsp;
+     
+
+     
+  </form>
+
+</div>
+
+</div>
+
+</div>
